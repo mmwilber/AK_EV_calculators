@@ -475,8 +475,8 @@ ax2.tick_params(left = False, bottom = False, labelleft=False)
 
 #add values to top of bars
 
-ax2.text('EV',ghg_ev+5,str(round(ghg_ev))+' kg CO2', ha='center')
-ax2.text('Gas Vehicle',ghg_ice + ghg_block+5,str(round(ghg_ice + ghg_block))+' kg CO2', ha='center')
+ax2.text('EV',ghg_ev+20,str(round(ghg_ev))+' kg CO2', ha='center')
+ax2.text('Gas Vehicle',ghg_ice + ghg_block+20,str(round(ghg_ice + ghg_block))+' kg CO2', ha='center')
 
 
 ax2.set_title('Annual Greenhouse Gas Emissions')
