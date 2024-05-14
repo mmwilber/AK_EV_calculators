@@ -460,8 +460,8 @@ ax1.bar('Gas Vehicle',total_cost_gas+cost_block, width=0.55, align='center',  co
 
 ax1.tick_params(left = False,  bottom = False,labelleft=False)   
 #add values to top of bars
-ax1.text('EV',total_cost_ev+2,'$'+str(round(total_cost_ev)), ha='center')
-ax1.text('Gas Vehicle',total_cost_gas+cost_block+2,'$'+str(round(total_cost_gas+cost_block)), ha='center')
+ax1.text('EV',total_cost_ev+5,'$'+str(round(total_cost_ev)), ha='center')
+ax1.text('Gas Vehicle',total_cost_gas+cost_block+5,'$'+str(round(total_cost_gas+cost_block)), ha='center')
 # Add the axis labels
 # get rid of the frame
 ax1.set(frame_on=False)
@@ -475,8 +475,8 @@ ax2.tick_params(left = False, bottom = False, labelleft=False)
 
 #add values to top of bars
 
-ax2.text('EV',ghg_ev,str(round(ghg_ev))+' kg CO2', ha='center')
-ax2.text('Gas Vehicle',ghg_ice + ghg_block+2,str(round(ghg_ice + ghg_block))+' kg CO2', ha='center')
+ax2.text('EV',ghg_ev+5,str(round(ghg_ev))+' kg CO2', ha='center')
+ax2.text('Gas Vehicle',ghg_ice + ghg_block+5,str(round(ghg_ice + ghg_block))+' kg CO2', ha='center')
 
 
 ax2.set_title('Annual Greenhouse Gas Emissions')
