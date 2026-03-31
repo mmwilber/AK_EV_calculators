@@ -87,8 +87,8 @@ util = dfc['ElecUtilities'].loc[dfc['aris_city']==city].iloc[0][0][1] #find a ut
 if util == 2:
   util =1 #Anchorage maps to ML&P, but want to map to CEA
 #choose the PCE rate here:
-#test
-nonpce = literal_eval(dfu['Blocks'].loc[dfu['ID']==util].iloc[0].replace('nan', 'None'))[0][1]
+
+nonpce = eval(dfu['Blocks'].loc[dfu['ID']==util].iloc[0].replace('nan', 'None'))[0][1]
 pce = dfu['PCE'].loc[dfu['ID']==util].iloc[0] #this is the PCE adjustment to the full rate!
 if ((pce==pce) and pce > 0 and pce < nonpce):
     PCE = True
