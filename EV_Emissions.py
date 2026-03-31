@@ -135,7 +135,7 @@ else:
       most_recent_index = index
       
   dpg = response.json()['features'][most_recent_index]['attributes']['GasRetailGal']
-  st.write('The calculator found an up-to-date gas price for your community:', ' :green[${price:.2f}]'.format(price = dpg)) 
+  st.write('The calculator found an up-to-date gas price for your community:', ' :green[${price:.2f}]'.format(price = dpg))  
 
    
 plug = False
