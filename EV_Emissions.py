@@ -159,7 +159,7 @@ if complicated:
                 '(this calculator internally adjusts for the effect of temperature): '
                 'check at fueleconomy.gov', value = epm, max_value = 3.0)
     rate = nonpce
-    name = dfu.loc[dfu['ID']==util].iloc[0][1]
+    name = dfu.loc[dfu['ID']==util].iloc[0].iloc[1]
     name = name.split('-')[0]
     st.write("According to our records, your utility is",name )
     if PCE == True:
@@ -199,7 +199,7 @@ if complicated:
         plug_hrs = st.slider("How many hours do you plug in your block heater each day?", max_value = 24, value = 2)
         plug_w = st.slider("How many watts is your block heater (or block plus oil heater)?", min_value = 400, max_value = 1600)
         #we will also use 20F as the temperature below which idling happens, but could change that with better info, or allow a choice
-    idle = st.slider("How many minutes do you idle your car on cold days (to warm up or keep your car warm)?", max_value = 1440, value = 5)
+    idle = st.slider("How many minutes do you idle your car on cold days (to warm up or keep your car warm)?", max_value = 1440, value = 30)
     
 #######################################3   
     
@@ -524,7 +524,7 @@ st.write("")
 st.write("Note that costs and emissions for the Internal Combustion Engine vehicle include gas and any electricity used for block/oilpan/etc heating.")
 st.write("")
 x = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
-tmy_month = tmy.resample('M').sum()
+tmy_month = tmy.resample('ME').sum()
 fig, ax = plt.subplots()
 #ax.bar(x,tmy_month.kwh, width=0.35, align='edge', label = 'EV')
 ax.bar(x,tmy_month.parke, width=0.35, align='edge', label = 'Parked')
@@ -546,7 +546,7 @@ st.write("This is a lower efficiency than the rated kWh/mile - cold temperatures
 
 st.write(" ")
 
-st.write("This project was made possible by funding from the Alaska Energy Authority, Office of Naval Research (ONR) Award # N00014-18-S-B001, and the National Science Foundation’s Navigating the New Arctic program’s “Planning Collaborative Research: Electric Vehicles in the Arctic” project (award # 2127171) ")
+st.write("This project was made possible by funding from the Alaska Energy Authority, Office of Naval Research (ONR) Award # N00014-18-S-B001, and the National Science Foundation’s Navigating the New Arctic Program’s “Planning Collaborative Research: Electric Vehicles in the Arctic” project (award # 2127171, 2318384) ")
 
 st.write("The calculations are based on data for commercially available electric cars, results may not hold for other types of electric vehicles. ")
 st.write("Your personal driving habits and other real world conditions could change these results dramatically! ")
